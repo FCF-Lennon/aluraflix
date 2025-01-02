@@ -1,0 +1,56 @@
+{
+    "videos": {
+      "frontend": [
+        {
+          "id": 1,
+          "title": "Frontend Video 1",
+          "description": "Descripción del video 1",
+          "image": "https://i.ytimg.com/vi/1iJ5lof5kLM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBQ9PSsTlQiCyj05wxTJBEX76OZdQ"
+        },
+        {
+          "id": 2,
+          "title": "Frontend Video 2",
+          "description": "Descripción del video 2",
+          "image": "https://i.ytimg.com/vi/1iJ5lof5kLM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBQ9PSsTlQiCyj05wxTJBEX76OZdQ"
+        }
+      ],
+      "backend": [
+        {
+          "id": 3,
+          "title": "Backend Video 1",
+          "description": "Descripción del video 1",
+          "image": "https://i.ytimg.com/vi/1iJ5lof5kLM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBQ9PSsTlQiCyj05wxTJBEX76OZdQ"
+        },
+        {
+          "id": 4,
+          "title": "Backend Video 2",
+          "description": "Descripción del video 1",
+          "image": "https://i.ytimg.com/vi/1iJ5lof5kLM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBQ9PSsTlQiCyj05wxTJBEX76OZdQ"
+        }
+      ],
+      "innovacion y gestion": [
+        {
+          "id": 5,
+          "title": "Innovación Video 1",
+          "description": "Descripción del video 1",
+          "image": "https://i.ytimg.com/vi/1iJ5lof5kLM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBQ9PSsTlQiCyj05wxTJBEX76OZdQ"
+        },
+        {
+          "id": 6,
+          "title": "Gestión Video 2",
+          "description": "Descripción del video 2",
+          "image": "https://i.ytimg.com/vi/1iJ5lof5kLM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBQ9PSsTlQiCyj05wxTJBEX76OZdQ"
+        }
+      ]
+    },
+    "videosDestacados": [
+      {
+        "id": 1,
+        "title": "Challenge React",
+        "image": "src/assets/imagenes/banner.png",
+        "description": "Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.",
+        "url": "https://www.youtube.com/embed/PwheldW6V98?si=mJKUmresNkF_c4Q1"
+      }
+    ]
+  }
+  
