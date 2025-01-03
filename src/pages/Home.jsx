@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Categorias from '../components/Categorias';
-import Footer from '../components/Footer';
 import VideoCard from '../components/VideoCard';
 import Modal from '../components/Modal';
-import GlobalStyles from '../components/GlobalStyles';
+import Layaut from '../components/Layaut';
 
 const VideosContainer = styled.div`
   display: flex;
@@ -84,9 +82,7 @@ const Home = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
-      <GlobalStyles />
-      <Header />
+    <Layaut>
       <Banner />
       <Categorias>
         {Object.keys(videos).map((category) => (
@@ -112,8 +108,7 @@ const Home = () => {
           onSave={handleSave}
         />
       )}
-      <Footer />
-    </div>
+    </Layaut>
   );
 };
 

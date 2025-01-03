@@ -25,8 +25,7 @@ const Banner = () => {
   const [videosDestacados, setVideosDestacados] = useState([]);
   const [loading, setLoading] = useState(true); // Estado para verificar si está cargando
   const [error, setError] = useState(null); // Estado para manejar errores
-
-
+  
 
   useEffect(() => {
     fetch(url)
@@ -55,6 +54,9 @@ const Banner = () => {
   if (error) {
     return <div>Error: {error}</div>; // Muestro el error si ocurre
   }
+
+  
+
 
   return (
     <BannerWrapper>
