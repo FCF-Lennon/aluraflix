@@ -53,7 +53,7 @@ const Modal = ({ video, onClose, onSave }) => {
   const [formData, setFormData] = useState({
     title: video.title,
     description: video.description,
-    image: video.image
+    url: video.url
   });
 
   const handleChange = (e) => {
@@ -82,19 +82,19 @@ const Modal = ({ video, onClose, onSave }) => {
             onChange={handleChange}
             placeholder="Título del video"
           />
+          <Input
+            type="url"
+            name="url"
+            value={formData.url}
+            onChange={handleChange}
+            placeholder="URL del video"
+          />
           <Textarea
             name="description"
             value={formData.description}
             onChange={handleChange}
             placeholder="Descripción"
             rows="4"
-          />
-          <Input
-            type="text"
-            name="image"
-            value={formData.image}
-            onChange={handleChange}
-            placeholder="URL de la imagen"
           />
           <Button type="submit">Guardar Cambios</Button>
         </form>

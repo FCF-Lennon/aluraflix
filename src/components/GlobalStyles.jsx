@@ -188,6 +188,8 @@ const GlobalStyles = createGlobalStyle`
     [hidden] {
     display: none;
     }
+
+    
 `
 
 export default GlobalStyles;

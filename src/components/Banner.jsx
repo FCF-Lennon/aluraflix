@@ -8,7 +8,6 @@ const BannerWrapper = styled.div`
   background-position: center;
   display: flex;
   justify-content: center; 
-  /* gap: 20px; */
   width: 100%;
   height: 100%;
   padding: clamp(50px, 50vh, 100px) 20px;
@@ -133,7 +132,6 @@ const Banner = () => {
         return res.json();
       })
       .then((data) => {
-        console.log("Datos obtenidos: ", data); // Verifico si se optienen datos
         setVideosDestacados(data); // Asigno los datos directamente
         setLoading(false); // Actualizo el estado de carga
       })

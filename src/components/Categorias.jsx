@@ -3,14 +3,11 @@ import styled from 'styled-components';
 const CategoriesWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
-  padding: 20px;
-  background-color: #f4f4f4;
-`;
-
-const CategoryTitle = styled.h2`
-  text-align: center;
-  color: #333;
+  padding: 50px 20px;
+  font-family: "Roboto", serif;
+  overflow-y: hidden;
 `;
 
 const Categories = ({ children }) => {
