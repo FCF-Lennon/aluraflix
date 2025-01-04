@@ -34,16 +34,6 @@ const CardIframe = styled.iframe`
   border-bottom: 4px solid ${({ $color }) => $color};
 `;
 
-const CardTitle = styled.h4`
-  font-size: 16px;
-  margin: 10px 0;
-`;
-
-const CardDescription = styled.p`
-  font-size: 14px;
-  color: #555;
-`;
-
 const ButtonWrapper = styled.div`
   width: 100%;
   height: 100%;

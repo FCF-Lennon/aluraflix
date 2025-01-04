@@ -5,7 +5,7 @@ const CategoriesWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  padding: 50px 20px;
+  padding: 100px 20px;
   font-family: "Roboto", serif;
   overflow-y: hidden;
 `;

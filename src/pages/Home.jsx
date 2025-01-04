@@ -64,7 +64,6 @@ const TitleCategory = styled.h2`
   align-content: center;
   border-radius: 15px;
   padding: 4px;
-
 `
 
 const Home = () => {
@@ -144,7 +143,7 @@ const Home = () => {
     handleCloseModal();
   };
 
-  if (loading) return <div>Cargando videos...</div>
+  // if (loading) return <div>Cargando videos...</div>
   if (error) return <div>Error: {error}</div>;
 
   return (
