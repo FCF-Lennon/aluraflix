@@ -59,7 +59,6 @@ const NavLink = styled(RouterNavLink)`
   }
 
   @media (max-width: 430px) {
-    /* transition: all 0.3s ease; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,15 +104,22 @@ const IconoLink = styled.img`
 
 const HeaderWrapper = styled.header`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 20px;
+  justify-content: center;
   background-color: #262626;
   color: white;
   border-bottom: 4px solid #2271d1;
   box-shadow: 0 5px 29px 0 rgba(34, 113, 209, 0.7);
   height: 60px;
   transition: all 0.3s ease;
+  padding: 5px 20px;
+
+  & div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1360px;
+  }
 
   @media (max-width: 1024px) {
     background: rgba(0, 0, 0, 0.9);
@@ -126,8 +132,11 @@ const HeaderWrapper = styled.header`
     border-bottom: 0;
     border-top: 4px solid #2271d1;
     padding: 20px 23px;
-    justify-content: center;
     order: 2;
+
+    & div {
+      justify-content: center;
+    }
 
     ${Logo} {
       display: none;
@@ -162,32 +171,35 @@ const Header = () => {
   }, [location]);
 
   return (
+    
     <HeaderWrapper>
-      <Logo src={logoSrc} alt="Logo" />
-      <Nav>
-        <NavLink
-          to="/"
-          $isActive={buttonActive === "/"}
-        >
-          <h2>HOME</h2>
-          <IconoLink
-            src={buttonActive === "/" ? home_activo : home_inactivo}
-            alt="Icono de volver al home"
+      <div>
+        <Logo src={logoSrc} alt="Logo" />
+        <Nav>
+          <NavLink
+            to="/"
             $isActive={buttonActive === "/"}
-          />
-        </NavLink>
-        <NavLink
-          to="/nuevo-video"
-          $isActive={buttonActive === "/nuevo-video"}
-        >
-          <h2>NUEVO VIDEO</h2>
-          <IconoLink
-            src={buttonActive === "/nuevo-video" ? newvideo_activo : newvideo_inactivo}
-            alt="Icono de ir a nuevo video"
+          >
+            <h2>HOME</h2>
+            <IconoLink
+              src={buttonActive === "/" ? home_activo : home_inactivo}
+              alt="Icono de volver al home"
+              $isActive={buttonActive === "/"}
+            />
+          </NavLink>
+          <NavLink
+            to="/nuevo-video"
             $isActive={buttonActive === "/nuevo-video"}
-          />
-        </NavLink>
-      </Nav>
+          >
+            <h2>NUEVO VIDEO</h2>
+            <IconoLink
+              src={buttonActive === "/nuevo-video" ? newvideo_activo : newvideo_inactivo}
+              alt="Icono de ir a nuevo video"
+              $isActive={buttonActive === "/nuevo-video"}
+            />
+          </NavLink>
+        </Nav>
+      </div>
     </HeaderWrapper>
   );
 };

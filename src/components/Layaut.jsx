@@ -13,16 +13,17 @@ const LayoutContainer = styled.div`
 
 const Content = styled.main`
   flex: 1;
-  padding: 20px;
+  align-self: center;
+  width: 100%;
 `;
 
 const Layaut = ({ children }) => {
   return (
     <LayoutContainer>
-      <GlobalStyles />
-      <Header />
+      <GlobalStyles/>
+      <Header/>
       <Content>{children}</Content>
-      <Footer />
+      <Footer/>
     </LayoutContainer>
   );
 };
