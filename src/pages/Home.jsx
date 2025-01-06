@@ -70,6 +70,7 @@ const Home = () => {
 
   const url = "http://localhost:5000/videos";
   const [videos, setVideos] = useState({ frontend: [], backend: [], innovacion: [] });
+  const [categories, setCategories] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [error, setError] = useState(null); // Estado para manejar errores
@@ -96,6 +97,7 @@ const Home = () => {
       .then((data) => {
         if (data && typeof data === "object") {
           setVideos(data);
+          setCategories(Object.keys(data));
         } else {
           throw new Error("La estructura de los datos no es válida.");
         }
@@ -178,6 +180,7 @@ const Home = () => {
           video={selectedVideo}
           onClose={handleCloseModal}
           onSave={handleSave}
+          categories={categories}
         />
       )}
     </Layaut>

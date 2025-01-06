@@ -19,15 +19,15 @@ const Content = styled.main`
   width: 100%;
 `;
 
-const Layaut = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <LayoutContainer>
-      <GlobalStyles/>
-      <Header/>
+      <GlobalStyles />
+      <Header />
       <Content>{children}</Content>
-      <Footer/>
+      <Footer />
     </LayoutContainer>
   );
 };
 
-export default Layaut;
+export default Layout;
