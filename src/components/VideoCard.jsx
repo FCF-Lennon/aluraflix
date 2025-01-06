@@ -4,7 +4,7 @@ import iconoEliminar from '../assets/iconos/eliminar.png';
 
 const Card = styled.div`
   background: rgba(0, 0, 0, 0.9);
-  flex: 0 0 calc(100% / 3 - 13px); 
+  flex: 0 0 calc(100% / 3 - 14px); 
   max-width: calc(100% / 3);
   max-height: 325px;
   height: 100%;
@@ -14,7 +14,7 @@ const Card = styled.div`
   transition: box-shadow 0.3s ease, border 0.3s ease;
 
   @media (max-width: 1024px) {
-    flex: 0 0 calc(100% / 2 - 9px);
+    flex: 0 0 calc(100% / 2 - 10px);
     max-width: calc(100% / 2);
   }
 
@@ -109,4 +109,3 @@ const VideoCard = ({ video, onDelete, onEdit, $color }) => {
 };
 
 export default VideoCard;
-

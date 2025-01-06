@@ -1,92 +1,104 @@
 {
-    "videos": {
-      "frontend": [
-        {
-          "id": 1,
-          "title": "Frontend Video 1",
-          "description": "Descripción del video 1",
-          "url": "https://www.youtube.com/embed/r5T2aO9YXb0?si=aHWokvcs63ff33l1"
-        },
-        {
-          "id": 2,
-          "title": "Frontend Video 2",
-          "description": "Descripción del video 2",
-          "url": "https://www.youtube.com/embed/qBrlvcQjrCA?si=NtRiXE2M6UXFpuVy"
-        },
-        {
-          "id": 3,
-          "title": "Frontend Video 3",
-          "description": "Descripción del video 3",
-          "url": "https://www.youtube.com/embed/xdzz3_WqFmE?si=K3vRJxqY2Xt9v2D4"
-        },
-        {
-          "id": 4,
-          "title": "Frontend Video 4",
-          "description": "Descripción del video 4",
-          "url": "https://www.youtube.com/embed/DeM2Ak8tWFU?si=z9eTmcwKMhbGnOSM"
-        }
-      ],
-      "backend": [
-        {
-          "id": 5,
-          "title": "Frontend Video 1",
-          "description": "Descripción del video 1",
-          "url": "https://www.youtube.com/embed/b5M9ws0X3FQ?si=BByTwoZV_195ifW0"
-        },
-        {
-          "id": 6,
-          "title": "Frontend Video 2",
-          "description": "Descripción del video 2",
-          "url": "https://www.youtube.com/embed/1EJ69twpnMo?si=77XLahry_zDuc666"
-        },
-        {
-          "id": 7,
-          "title": "Frontend Video 3",
-          "description": "Descripción del video 3",
-          "url": "https://www.youtube.com/embed/SAusS82-xQ0?si=w0csFllv1LjuLs7O"
-        },
-        {
-          "id": 8,
-          "title": "Frontend Video 4",
-          "description": "Descripción del video 4",
-          "url": "https://www.youtube.com/embed/hNUuAYmGL1M?si=BLk4jJSDjyTHBoXO"
-        }
-      ],
-      "innovacion y gestion": [
-        {
-          "id": 9,
-          "title": "Frontend Video 1",
-          "description": "Descripción del video 1",
-          "url": "https://www.youtube.com/embed/AULPtYo25Lw?si=Cp7Ovqt-8SBA_3tj"
-        },
-        {
-          "id": 10,
-          "title": "Frontend Video 2",
-          "description": "Descripción del video 2",
-          "url": "https://www.youtube.com/embed/zOetOoeOrOg?si=R64GU4elwkU-ce7V"
-        },
-        {
-          "id": 11,
-          "title": "Frontend Video 3",
-          "description": "Descripción del video 3",
-          "url": "https://www.youtube.com/embed/VKj8MlylaPg?si=3nhakwSHEgqM_RL6"
-        },
-        {
-          "id": 12,
-          "title": "Frontend Video 4",
-          "description": "Descripción del video 4",
-          "url": "https://www.youtube.com/embed/CpL7-sbW2O0?si=nBPiodanhasOV7D8"
-        }
-      ]
+  "videos": [
+    {
+      "id": "3",
+      "title": "Frontend Video cambie este",
+      "description": "Descripción del video debe ser 3 si category",
+      "url": "https://www.youtube.com/embed/xdzz3_WqFmE?si=K3vRJxqY2Xt9v2D4",
+      "categoryId": "1"
     },
-    "videosDestacados": [
-      {
-        "id": 1,
-        "title": "Challenge React",
-        "image": "src/assets/imagenes/banner.png",
-        "description": "Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.",
-        "url": "https://www.youtube.com/embed/PwheldW6V98?si=mJKUmresNkF_c4Q1"
-      }
-    ]
-  }
-  
+    {
+      "id": "4",
+      "title": "Frontend Video 4",
+      "description": "Descripción del video 4",
+      "url": "https://www.youtube.com/embed/DeM2Ak8tWFU?si=z9eTmcwKMhbGnOSM",
+      "categoryId": "2"
+    },
+    {
+      "id": "5",
+      "title": "Frontend Video 1",
+      "description": "Descripción del video 1",
+      "url": "https://www.youtube.com/embed/b5M9ws0X3FQ?si=BByTwoZV_195ifW0",
+      "categoryId": "2"
+    },
+    {
+      "id": "6",
+      "title": "Frontend Video 2",
+      "description": "Descripción del video 2",
+      "url": "https://www.youtube.com/embed/1EJ69twpnMo?si=77XLahry_zDuc666",
+      "categoryId": "2"
+    },
+    {
+      "id": "7",
+      "title": "Frontend Video 3",
+      "description": "Descripción del video 3",
+      "url": "https://www.youtube.com/embed/SAusS82-xQ0?si=w0csFllv1LjuLs7O",
+      "categoryId": "2"
+    },
+    {
+      "id": "8",
+      "title": "Frontend Video felipe",
+      "description": "Descripción del video 4",
+      "url": "https://www.youtube.com/embed/hNUuAYmGL1M?si=BLk4jJSDjyTHBoXO",
+      "categoryId": "1"
+    },
+    {
+      "id": "9",
+      "title": "Frontend Video 1",
+      "description": "Descripción del video 1",
+      "url": "https://www.youtube.com/embed/AULPtYo25Lw?si=Cp7Ovqt-8SBA_3tj",
+      "categoryId": "3"
+    },
+    {
+      "id": "10",
+      "title": "Frontend Video cambie este video ",
+      "description": "Descripción del debe tener categoryid 1",
+      "url": "https://www.youtube.com/embed/zOetOoeOrOg?si=R64GU4elwkU-ce7V",
+      "categoryId": "1"
+    },
+    {
+      "id": "11",
+      "title": "Frontend Video 3",
+      "description": "Descripción del video 3",
+      "url": "https://www.youtube.com/embed/VKj8MlylaPg?si=3nhakwSHEgqM_RL6",
+      "categoryId": "3"
+    },
+    {
+      "id": "12",
+      "title": "Frontend Video 4",
+      "description": "Descripción del video 4",
+      "url": "https://www.youtube.com/embed/CpL7-sbW2O0?si=nBPiodanhasOV7D8",
+      "categoryId": "3"
+    },
+    {
+      "id": "13",
+      "title": "Frontend Video 10",
+      "description": "Descripción del video 10",
+      "url": "https://www.youtube.com/embed/CpL7-sbW2O0?si=nBPiodanhasOV7D8",
+      "categoryId": "1"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "title": "Frontend"
+    },
+    {
+      "id": "2",
+      "title": "Backend"
+    },
+    {
+      "id": "3",
+      "title": "Innovación y Gestion"
+    }
+  ],
+  "videosDestacados": [
+    {
+      "id": "1",
+      "title": "Challenge React",
+      "image": "src/assets/imagenes/banner.png",
+      "description": "Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.",
+      "url": "https://www.youtube.com/embed/PwheldW6V98?si=mJKUmresNkF_c4Q1"
+    }
+  ]
+}

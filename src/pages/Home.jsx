@@ -16,7 +16,7 @@ const VideosContainer = styled.div`
 
   &::-webkit-scrollbar {
     height: 10px;
-    scrollbar-color: ${({ $color }) => $color}, rgba(34, 113, 209, 0.17); // revizar luego ojo
+    scrollbar-color: ${({ $color }) => $color}, rgba(34, 113, 209, 0.17); 
   }
 
   &::-webkit-scrollbar-track {
@@ -68,36 +68,42 @@ const TitleCategory = styled.h2`
 
 const Home = () => {
 
-  const url = "http://localhost:5000/videos";
-  const [videos, setVideos] = useState({ frontend: [], backend: [], innovacion: [] });
+  const videosUrl = "http://localhost:5000/videos";
+  const categoriesUrl = "http://localhost:5000/categories";
+  const [videos, setVideos] = useState([]);
   const [categories, setCategories] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [error, setError] = useState(null); // Estado para manejar errores
   const [loading, setLoading] = useState(true); // Estado de carga
+
   const getCategoryColor = (category) => {
-    switch (category.toUpperCase()) {
-      case "FRONTEND":
+    switch (category.title) {
+      case "Frontend":
         return "#6BD1FF";
-      case "BACKEND":
+      case "Backend":
         return "#00C86F";
-      case "INNOVACION Y GESTION":
+      case "Innovación y Gestion":
         return "#FFBA05";
       default:
-        return ""; // Color por defecto
+        return "Grey"; // Color por defecto
     }
   };
 
   useEffect(() => {
-    fetch(url)
-      .then((res) => {
-        if (!res.ok) throw new Error("Error al obtener los videos");
-        return res.json();
-      })
-      .then((data) => {
-        if (data && typeof data === "object") {
-          setVideos(data);
-          setCategories(Object.keys(data));
+    // Realizar ambas peticiones simultáneamente
+    Promise.all([
+      fetch(videosUrl).then((res) => res.json()),
+      fetch(categoriesUrl).then((res) => res.json())
+    ])
+      .then(([videosData, categoriesData]) => {
+        if (Array.isArray(videosData) && Array.isArray(categoriesData)) {
+          const videosMapped = videosData.map((video) => ({
+            ...video,
+            category: categoriesData.find((cat) => cat.id === video.categoryId)
+          }));
+          setVideos(videosMapped);
+          setCategories(categoriesData);
         } else {
           throw new Error("La estructura de los datos no es válida.");
         }
@@ -112,13 +118,7 @@ const Home = () => {
   }, []);
 
   const handleDelete = (id) => {
-    setVideos((prevVideos) => {
-      const updatedVideos = { ...prevVideos };
-      for (const category in updatedVideos) {
-        updatedVideos[category] = updatedVideos[category].filter((video) => video.id !== id);
-      }
-      return updatedVideos;
-    });
+    setVideos((prevVideos) => prevVideos.filter((video) => video.id !== id));
   };
 
   const handleEdit = (video) => {
@@ -132,20 +132,34 @@ const Home = () => {
   };
 
   const handleSave = (updatedVideo) => {
+    // Actualizar el video localmente
     setVideos((prevVideos) => {
-      const updatedVideos = { ...prevVideos };
-      for (const category in updatedVideos) {
-        const index = updatedVideos[category].findIndex((video) => video.id === updatedVideo.id);
-        if (index !== -1) {
-          updatedVideos[category][index] = updatedVideo;
-        }
-      }
-      return updatedVideos;
+      return prevVideos.map((video) =>
+        video.id === updatedVideo.id ? updatedVideo : video
+      );
     });
-    handleCloseModal();
+
+    // Hacer la solicitud PUT para actualizar el video en el db.json
+    fetch(`${videosUrl}/${updatedVideo.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedVideo),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Video actualizado en db.json:", data);
+        alert("Video actualizado con exito :)")
+        handleCloseModal();
+      })
+      .catch((error) => {
+        console.error("Error al actualizar el video:", error);
+        setError("Error al actualizar el video");
+      });
   };
 
-  // if (loading) return <div>Cargando videos...</div>
+  // if (loading) return <div>Cargando videos...</div> 
   if (error) return <div>Error: {error}</div>;
 
   return (
@@ -153,15 +167,16 @@ const Home = () => {
     <Layaut>
       <Banner />
       <Categorias>
-        {Object.keys(videos).map((category) => {
-          const color = getCategoryColor(category); // Calcula el color una vez
+        {categories.map((category) => {
+          const color = getCategoryColor(category); 
+          const categoryVideos = videos.filter((video) => video.categoryId === category.id);
           return (
-            <ItemsCategorias key={category}>
+            <ItemsCategorias key={category.id}>
               <TitleWrapper>
-                <TitleCategory $color={color}>{category.toUpperCase()}</TitleCategory>
+                <TitleCategory $color={color}>{category.title}</TitleCategory>
               </TitleWrapper>
               <VideosContainer $color={color}>
-                {videos[category].map((video) => (
+                {categoryVideos.map((video) => (
                   <VideoCard
                     key={video.id}
                     video={video}
