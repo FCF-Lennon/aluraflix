@@ -118,7 +118,23 @@ const Home = () => {
   }, []);
 
   const handleDelete = (id) => {
-    setVideos((prevVideos) => prevVideos.filter((video) => video.id !== id));
+    // realiza la solicitud de eleiminar a la api
+    fetch(`${videosUrl}/${id}`, {
+      method: "DELETE", 
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error al eliminar el video");
+      }
+      // Si la eliminación es exitosa, actualizar el estado local
+      setVideos((prevVideos) => prevVideos.filter((video) => video.id !== id));
+      alert("Video eliminado con éxito :)");
+    })
+    .catch((error) => {
+      console.error("Error al eliminar el video:", error);
+      setError("Error al eliminar el video :(");
+    });
+
   };
 
   const handleEdit = (video) => {
