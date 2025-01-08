@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import iconClosed from '../assets/iconos/cerrar.png';
 
@@ -43,14 +43,14 @@ const ModalContent = styled.dialog`
 const ModalTitle = styled.h2`
   color: #2271D1;
   font-family: "Roboto", serif;
-  font-size: clamp(12px, 2.5vw, 32px);
+  font-size: clamp(20px, 2.5vw, 32px);
   font-weight: 900;
   width: 100%;
 `;
 
 const LabelTitleInput = styled.label`
   display: inline-flex;
-  font-size: clamp(12px, 2.5vw, 20px);
+  font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 350;
   color: ${({ $isFocused }) => ($isFocused ? '#6BD1FF' : '#FFFFFF')};
   transform: ${({ $isFocused }) => ($isFocused ? 'scale(1.05) translate(2%, -1%)' : 'none')};
@@ -66,10 +66,11 @@ const Input = styled.input`
   border: 0;
   border-bottom: 3px solid ${({ $isFocused }) => ($isFocused ? '#6BD1FF' : '#A5A5A5')};
   height: 62px;
-  font-size: clamp(12px, 2.5vw, 20px);
+  font-size: clamp(16px, 2.5vw, 20px);
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
+    font-size: clamp(14px, 4vw, 20px);
   }
 `;
 
@@ -82,7 +83,7 @@ const Select = styled.select`
   border: 0;
   border-bottom: 3px solid ${({ $isFocused }) => ($isFocused ? '#6BD1FF' : '#A5A5A5')};
   height: 62px;
-  font-size: clamp(12px, 2.5vw, 20px);
+  font-size: clamp(16px, 2.5vw, 20px);
   cursor: pointer;
 
   &::placeholder {
@@ -104,11 +105,12 @@ const Textarea = styled.textarea`
   color: #FFFFFF;
   border: 0;
   border-bottom: 3px solid ${({ $isFocused }) => ($isFocused ? '#6BD1FF' : '#A5A5A5')};
-  font-size: clamp(12px, 2.5vw, 20px);
+  font-size: clamp(16px, 2.5vw, 20px);
   resize: none;
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
+    font-size: clamp(14px, 4vw, 20px);
   }
 `;
 
@@ -187,7 +189,9 @@ const Modal = ({ video, onClose, onSave, categories }) => {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+
+    event.preventDefault();
     // Crear una copia del objeto 
     const { category, ...videoToSave } = updatedVideo;
     onSave(videoToSave); // Guardar solo los datos correctos
@@ -200,7 +204,7 @@ const Modal = ({ video, onClose, onSave, categories }) => {
     <ModalWrapper>
       <ModalContent>
         <ModalTitle>EDITAR VIDEO</ModalTitle>
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={handleSubmit}>
           {/* Campo Título */}
           <div>
             <Input
@@ -280,7 +284,7 @@ const Modal = ({ video, onClose, onSave, categories }) => {
           </div>
 
           <ButtonWrapper>
-            <Button type="button" onClick={handleSubmit}>Guardar</Button>
+            <Button type="submit">Guardar</Button>
             <Button type="button" onClick={onClose}>Cerrar</Button>
           </ButtonWrapper>
         </form>
