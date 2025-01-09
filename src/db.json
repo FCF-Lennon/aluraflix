@@ -1,13 +1,6 @@
 {
   "videos": [
     {
-      "id": "3",
-      "title": "Frontend Video cambie este",
-      "description": "Descripción del video debe ser 3 si category",
-      "url": "https://www.youtube.com/embed/xdzz3_WqFmE?si=K3vRJxqY2Xt9v2D4",
-      "categoryId": "1"
-    },
-    {
       "id": "4",
       "title": "Frontend Video 4",
       "description": "Descripción del video 4",
@@ -37,7 +30,7 @@
     },
     {
       "id": "8",
-      "title": "Frontend Video felipe",
+      "title": "Frontend Video prueba mate",
       "description": "Descripción del video 4",
       "url": "https://www.youtube.com/embed/hNUuAYmGL1M?si=BLk4jJSDjyTHBoXO",
       "categoryId": "1"
@@ -76,6 +69,41 @@
       "description": "Descripción del video 10",
       "url": "https://www.youtube.com/embed/CpL7-sbW2O0?si=nBPiodanhasOV7D8",
       "categoryId": "1"
+    },
+    {
+      "id": "ea44",
+      "title": "Prueba de solicitud POST",
+      "categoryId": "1",
+      "url": "https://www.youtube.com/embed/qBrlvcQjrCA?si=NtRiXE2M6UXFpuVy",
+      "description": "Prueba de solicitud"
+    },
+    {
+      "id": "92c5",
+      "title": "segunda prueba ",
+      "categoryId": "2",
+      "url": "https://www.youtube.com/embed/qBrlvcQjrCA?si=NtRiXE2M6UXFpuVy",
+      "description": "segunda prueba de solicitud POST en backend"
+    },
+    {
+      "id": "deaf",
+      "title": "prueba de nuevo video",
+      "categoryId": "3",
+      "url": "https://www.youtube.com/embed/qBrlvcQjrCA?si=NtRiXE2M6UXFpuVy",
+      "description": "prueba de nuevo video"
+    },
+    {
+      "id": "a254",
+      "title": "Prueba de alerta de exito",
+      "categoryId": "3",
+      "url": "https://youtube.com/embed/WvVgmSiT1uU",
+      "description": "prueba de activación de alerta"
+    },
+    {
+      "id": "f3af",
+      "title": "Video de prueba 12",
+      "categoryId": "2",
+      "url": "https://www.youtube.com/embed/xdzz3_WqFmE?si=K3vRJxqY2Xt9v2D4",
+      "description": "este es un video de prueba"
     }
   ],
   "categories": [

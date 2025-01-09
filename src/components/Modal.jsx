@@ -231,7 +231,7 @@ const Modal = ({ video, onClose, onSave, categories }) => {
               onChange={handleCategoryChange}
               onFocus={() => handleFocus('categoryId')}
               onBlur={handleBlur}
-              $isFocused={focusedField === 'categoryid'}
+              $isFocused={focusedField === 'categoryId'}
               required
             >
               {categories.map((category) => (

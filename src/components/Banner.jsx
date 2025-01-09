@@ -164,7 +164,7 @@ const Banner = () => {
               <iframe
                 src={video.url}
                 title={video.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
                 allowFullScreen={true}
                 frameBorder={"0"}
                 // color={color}
